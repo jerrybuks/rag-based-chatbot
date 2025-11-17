@@ -4,6 +4,8 @@ By Jerry Chibuokem
 
 ## 1. Context & Objective
 
+This project was built for **HRCare** — an HR SaaS that helps organizations manage hiring, onboarding, payroll integrations, time-off, performance, compliance, and employee lifecycle workflows.
+
 Our customer support team receives large volumes of repetitive questions daily — all of which already exist in long-form internal documentation. My objective in this project was to build a Retrieval-Augmented Generation (RAG) system capable of:
 
 - parsing a long FAQ document
@@ -33,7 +35,7 @@ I used OpenAI's embedding models (default: `text-embedding-ada-002`, with suppor
 
 ## 3. Document Processing & Chunking Strategy
 
-### 🔹 Section-Based Chunking (My Main Design Choice)
+### 🔹 Recursive (Section-Based Chunking) (My Main Design Choice)
 
 My FAQ document is naturally structured into sections such as:
 
@@ -254,7 +256,7 @@ Create `.env` file:
 
 ```bash
 OPENAI_API_KEY=your-key
-OPENAI_API_BASE=your-base-url  # Optional, for custom endpoints
+OPENAI_API_BASE=your-base-url  # Optional, for open router
 ```
 
 ### 3. Run the indexing script
@@ -272,7 +274,7 @@ This will:
 ### 4. Start the FastAPI server
 
 ```bash
-uvicorn src.main:app --reload
+fastapi dev src/main.py
 ```
 
 ### 5. Query the API
