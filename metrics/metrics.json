@@ -1,0 +1,34 @@
+{
+  "requests": [
+    {
+      "timestamp": "2025-11-17T15:26:17.355278Z",
+      "latencyMs": 6267.372846603394,
+      "total_tokens": 586,
+      "tokens_prompt": 494,
+      "tokens_completion": 92,
+      "costUsd": 0.0003857,
+      "embeddingCostUsd": 7.000000000000001e-07,
+      "llmCostUsd": 0.000385,
+      "success": true,
+      "error": null,
+      "questionSnippet": "How do I create an account?",
+      "queryId": "e0a676072ad63194ba1110210357175e3c0e89256d255b368caee64d89f9cd71"
+    },
+    {
+      "timestamp": "2025-11-17T15:27:23.303129Z",
+      "latencyMs": 3368.540048599243,
+      "total_tokens": 0,
+      "tokens_prompt": 0,
+      "tokens_completion": 0,
+      "costUsd": 1.2000000000000002e-06,
+      "embeddingCostUsd": 1.2000000000000002e-06,
+      "llmCostUsd": 0.0,
+      "success": true,
+      "error": null,
+      "questionSnippet": "How do I build my own product that looks like yours?",
+      "queryId": "811fe280aa0068a0eee866a8fb16baa84ba1b8418c6f0160c0c4db21ea558867"
+    }
+  ],
+  "successes": 2,
+  "failures": 0
+}

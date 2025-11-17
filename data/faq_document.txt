@@ -1,0 +1,457 @@
+section_id: ACCOUNT_Q1_CREATE
+section: Account & Access
+product_area: Account Management
+intent_tags: ["account_creation", "signup", "organization"]
+last_updated: 2025-11-14
+content:
+To create an organization account in HRCare, visit the signup page and provide your organization’s legal name, billing contact, and relevant tax information. Designate an initial admin who will have full access to configure users, roles, integrations, and system-wide policies. Small teams can self-serve entirely online, completing all steps without assistance, while enterprise customers requiring SSO integration, sandbox testing, or migration of legacy data should contact Sales for guided support. Once the account is created, the admin can set default permissions, add users, configure approval workflows, and enforce compliance rules such as password policies, IP restrictions, and session timeout rules. Automated confirmation emails and detailed step-by-step instructions guide new admins through account setup. HRCare ensures seamless onboarding, secure access, and alignment with organizational policies. Admins also receive notifications for account activities and system updates, helping maintain oversight and compliance. This structured approach reduces errors, enhances security, and provides a smooth start for every organization.
+
+---
+
+section_id: ACCOUNT_Q2_INVITE
+section: Account & Access
+product_area: Account Management
+intent_tags: ["user_invite", "roles", "permissions"]
+last_updated: 2024-07-19
+content:
+Admins can invite new users to HRCare by navigating to Settings → Users → Invite. Invitations require the recipient’s email and an assigned role. Role templates include Admin, HR Manager, Manager, Employee, or custom roles configured under Settings → Roles. Admins can define access limits for sensitive features, such as payroll, performance management, and reporting tools. Invited users complete their profile, set a secure password, and optionally enable multi-factor authentication (MFA) for additional protection. Automated reminders notify users of pending invitations, reducing delays. Bulk invitation options, including CSV imports, simplify onboarding for larger teams. Every invitation action is logged to ensure auditability and compliance with organizational policies. This process ensures that employees receive the correct access, onboarding is efficient, and security standards are consistently applied. Admins can also revoke or reassign invitations if necessary, maintaining control over organizational access.
+
+---
+
+section_id: ACCOUNT_Q3_IP_RESTRICT
+section: Account & Access
+product_area: Security & Compliance
+intent_tags: ["IP_restriction", "MFA", "device_verification"]
+last_updated: 2023-08-22
+content:
+HRCare provides advanced security controls to safeguard user accounts. Admins can define IP allowlists to restrict access to trusted networks, ensuring unauthorized connections are blocked. Device verification tracks devices used to access the system, requiring confirmation for new devices. Multi-factor authentication (MFA) can be enforced for all users or selected roles, using authenticator apps or SMS codes. Session timeout rules automatically log out inactive users, reducing exposure to unattended devices. Detailed security activity logs record successful and failed login attempts, IP addresses, and device information to support auditing and compliance. Alerts notify admins of suspicious activities, including logins from unknown locations or repeated failed access attempts. Combining these controls helps organizations comply with internal security policies, regulatory requirements such as GDPR or ISO standards, and mitigates the risk of unauthorized access, data breaches, and insider threats, while providing users with a secure and manageable experience.
+
+---
+
+section_id: ACCOUNT_Q4_MULTI_ORG
+section: Account & Access
+product_area: Account Management
+intent_tags: ["multi_organization", "SSO", "access_switch"]
+last_updated: 2025-03-30
+content:
+Users with multi-organization access can switch between different organizational accounts from their profile menu without needing to log out or re-authenticate, provided SSO is configured and active. This functionality allows employees, consultants, or admins managing multiple clients or subsidiaries to seamlessly navigate between organizations. HRCare ensures that permissions and role settings are context-specific, preventing cross-organization data exposure. Admins can configure default landing organizations, control which roles can switch accounts, and enforce SSO policies across all organizations. Notifications and activity logs capture multi-org access events for auditing. This design streamlines workflow efficiency, reduces friction, and supports complex enterprise structures while maintaining secure, role-based access management. Users benefit from uninterrupted productivity and consistent user experience when handling multiple organizational responsibilities.
+
+---
+
+section_id: SSO_Q1_PROVIDERS
+section: Single Sign-On (SSO)
+product_area: Identity & Access
+intent_tags: ["SSO", "SAML", "OIDC", "IdP"]
+last_updated: 2025-10-03
+content:
+HRCare supports SAML 2.0 and OIDC providers including Okta, Azure AD, and Google Workspace, allowing organizations to enforce centralized authentication and security policies. Admins configure SSO under Settings → Security → SSO by exchanging metadata or client credentials, mapping user attributes like email, name, and group memberships. Test connections can be performed in a staging workspace before enforcing SSO globally. Attribute mappings can be adjusted for custom fields or department-level access, and provisioning rules ensure users are automatically assigned appropriate roles and permissions. HRCare also supports session expiration, single logout, and backup admin access to mitigate downtime. Logging and audit trails capture authentication events for compliance and troubleshooting. This robust configuration enhances security, simplifies user management, and ensures seamless authentication aligned with enterprise identity management standards.
+
+---
+
+section_id: SSO_Q2_FAILOVER
+section: Single Sign-On (SSO)
+product_area: Identity & Access
+intent_tags: ["SSO_failover", "backup_admin"]
+last_updated: 2024-03-12
+content:
+Admins can configure Backup Admin Access in HRCare to maintain access during SSO outages or misconfigurations. One or more designated users can bypass SSO temporarily, ensuring critical operations continue without interruption. This feature is vital for troubleshooting identity provider issues, such as expired certificates, misconfigured mappings, or downtime. Backup admins have limited access to essential system functions, preventing unintended changes while allowing emergency intervention. Notifications and logs are generated whenever backup access is used to maintain compliance and audit readiness. Combining failover mechanisms with monitoring tools ensures that organizational operations remain uninterrupted while providing administrators with clear visibility into authentication issues. This approach balances security with operational resilience.
+
+---
+
+section_id: SSO_Q3_GROUP_SYNC
+section: Single Sign-On (SSO)
+product_area: Identity & Access
+intent_tags: ["group_sync", "roles_provisioning"]
+last_updated: 2023-11-21
+content:
+HRCare can automatically map identity provider (IdP) groups to internal roles or teams, enabling dynamic provisioning and deprovisioning. When a user is added, removed, or changed in the IdP, their access in HRCare updates automatically. Admins can configure mappings for departments, roles, or project teams, ensuring that permissions remain aligned with organizational policies. Synchronization schedules can be adjusted to run in real-time or at defined intervals. Audit logs capture all provisioning changes, providing transparency and regulatory compliance. This automation reduces manual administrative work, minimizes errors, and accelerates onboarding and offboarding processes. By linking group memberships to roles and teams, organizations maintain accurate access control, improve security posture, and enhance operational efficiency.
+
+---
+
+section_id: BILLING_Q1_CALCULATION
+section: Billing & Subscriptions
+product_area: Finance & Billing
+intent_tags: ["billing", "subscription", "add_ons"]
+last_updated: 2025-05-27
+content:
+Billing in HRCare is calculated per active user during each billing cycle, which can be monthly or annually. Add-ons, such as payroll connectors, advanced analytics, premium support, or custom integrations, are billed separately. Admins and owners can view detailed invoices, track usage history, and download PDF or CSV copies for accounting purposes under Settings → Billing. Billing logic accounts for active participation in payroll periods, performance cycles, or time-off plans, ensuring inactive or archived users are excluded. Alerts notify admins when invoices are generated or when payment issues arise. Automatic proration is applied for mid-cycle upgrades, while downgrades or seat removals take effect at the next billing cycle unless custom contracts specify otherwise. This system provides transparency, reduces manual reconciliation errors, and supports compliance with financial reporting and audit requirements. Administrators can also set up reminders and integrate billing reports with accounting systems for seamless operations.
+
+---
+
+section_id: BILLING_Q2_PLAN_CHANGE
+section: Billing & Subscriptions
+product_area: Finance & Billing
+intent_tags: ["upgrade", "add_seats", "proration"]
+last_updated: 2024-09-17
+content:
+HRCare allows owners to upgrade plans or add seats directly via Settings → Billing. Upgrades are prorated immediately, ensuring users only pay for what they consume. Downgrades or removal of seats take effect at the start of the next billing cycle to prevent service disruption. Enterprise customers with specific agreements can request custom plan adjustments by contacting Sales. Notifications alert admins about pending changes, proration calculations, and any required approvals. The system supports bulk seat additions, enabling rapid scaling for growing teams. Detailed billing logs and historical snapshots track plan changes over time, assisting finance teams in auditing and reconciliation. Combining automated notifications, proration, and historical visibility ensures a seamless experience for admins while maintaining financial accuracy and compliance.
+
+---
+
+section_id: BILLING_Q3_ACTIVE_USER
+section: Billing & Subscriptions
+product_area: Finance & Billing
+intent_tags: ["active_user", "billing_definition"]
+last_updated: 2023-06-05
+content:
+An active user in HRCare is defined as any user with active status participating in open payroll periods, ongoing performance cycles, or time-off plans. Inactive, suspended, or archived users are excluded from billing calculations to prevent overcharges. Admins can review user status reports and export lists for reconciliation purposes. The system automatically updates billing eligibility as users join or leave organizational processes, ensuring accurate invoicing. Notifications inform admins when active user counts change, assisting in planning for subscription adjustments. Combined with proration and add-on management, this definition ensures that billing is precise, transparent, and aligned with actual system usage. Financial reporting and audit trails capture changes in active user counts over time, supporting compliance and organizational accountability.
+
+---
+
+section_id: ATS_Q1_FEATURES
+section: Hiring & ATS
+product_area: Talent Acquisition
+intent_tags: ["ats_features", "job_posting", "candidate_tracking"]
+last_updated: 2025-11-14
+content:
+The HRCare ATS offers a full suite of hiring tools, including job posting management, candidate pipelines, resume parsing, interview scheduling, configurable scorecards, offer workflows with approval routing, and e-signature support. Integration with major job boards and social platforms streamlines candidate sourcing. Automated notifications, reminders, and task assignments reduce manual workload, while structured interviews and weighted competencies improve consistency and fairness in hiring decisions. All activities are time-stamped, logged, and exportable for compliance audits. Candidate communication templates and consent tracking support GDPR, CCPA, and other global data protection regulations. The ATS also provides dashboards for hiring progress, real-time analytics for pipeline health, and reporting on diversity metrics. Admins can set custom workflows for approval, rejection, or offer stages, ensuring alignment with organizational policies. The combination of automation, integration, and audit-ready tracking makes HRCare’s ATS efficient, compliant, and scalable.
+
+---
+
+section_id: ATS_Q2_PROGRESS_TRACKING
+section: Hiring & ATS
+product_area: Talent Acquisition
+intent_tags: ["candidate_tracking", "compliance"]
+last_updated: 2024-04-09
+content:
+HRCare enables organizations to track candidates through configurable stages of the hiring pipeline using scorecards and status updates. Each candidate’s progress is logged and timestamped, providing a complete audit trail. Admins can export data for compliance reporting, analyzing time-to-hire, rejection reasons, and offer acceptance rates. Communication templates ensure consistent messaging for interview requests, rejections, and offers, while automated reminders keep candidates and hiring managers on schedule. Integration with calendar tools allows interview scheduling and conflict management. Candidate consent tracking and secure data storage maintain compliance with GDPR, CCPA, and other regulations. Progress dashboards highlight bottlenecks, provide actionable insights, and allow managers to prioritize candidates. This structured approach reduces administrative overhead, ensures consistent candidate experiences, and supports regulatory compliance throughout the hiring lifecycle.
+
+---
+
+section_id: ATS_Q3_AUTOMATION
+section: Hiring & ATS
+product_area: Talent Acquisition
+intent_tags: ["automation", "candidate_notifications"]
+last_updated: 2023-12-14
+content:
+Automation within HRCare’s ATS allows predefined rules to trigger candidate notifications, reminders, or internal tasks for hiring managers. For example, when interviews are scheduled, candidates can automatically receive confirmation emails with calendar links and preparation instructions. Rejection notifications or offer letters can also be sent automatically, ensuring timely and consistent communication. Internal workflows such as updating scorecards, triggering follow-up tasks, or escalating overdue reviews can also be automated. These automation rules reduce manual work, minimize human error, and enhance the overall candidate experience. Detailed logging captures automated actions for auditing purposes, helping organizations maintain compliance with internal and external regulations. Hiring teams benefit from streamlined processes, improved response times, and better coordination across departments.
+
+---
+
+section_id: ATS_Q4_STRUCTURED_INTERVIEWS
+section: Hiring & ATS
+product_area: Talent Acquisition
+intent_tags: ["structured_interview", "scorecards", "competencies"]
+last_updated: 2025-02-18
+content:
+Structured interviews in HRCare allow HR teams to define scoring templates with specific competencies, weightings, and feedback guidelines. Interviewers can rate candidates consistently based on role requirements, ensuring fairness and comparability across multiple evaluations. Scorecards are customizable per position or department and can include both technical and behavioral metrics. Feedback is captured in a standardized format, facilitating performance analysis, calibration, and data-driven decision-making. The system integrates with candidate profiles, pipelines, and reporting dashboards to provide comprehensive insights on hiring outcomes. Activity logs track all scoring and comments, supporting audit compliance and transparency. This structured approach reduces interviewer bias, improves evaluation quality, and ensures every candidate is assessed fairly and consistently, aligning hiring practices with organizational objectives.
+
+---
+
+section_id: ONBOARD_Q1_AUTOMATION
+section: Onboarding & Offboarding
+product_area: Employee Lifecycle
+intent_tags: ["onboarding", "automation", "checklists"]
+last_updated: 2024-05-23
+content:
+HRCare onboarding templates automate paperwork, IT requests, benefits enrollment, and orientation tasks. Managers and IT teams can track completion via checklists and automated reminders, ensuring compliance and smooth onboarding.
+
+---
+
+section_id: ONBOARD_Q2_OFFBOARDING
+section: Onboarding & Offboarding
+product_area: Employee Lifecycle
+intent_tags: ["offboarding", "security", "audit"]
+last_updated: 2023-08-31
+content:
+Offboarding workflows revoke SSO access, disable API tokens, schedule asset returns, trigger final payroll exports, and log completions. Retention schedules are applied per customer policy to ensure secure and compliant employee exit.
+
+---
+
+section_id: ONBOARD_Q3_CUSTOMIZATION
+section: Onboarding & Offboarding
+product_area: Employee Lifecycle
+intent_tags: ["custom_templates", "location", "role"]
+last_updated: 2025-07-02
+content:
+Onboarding templates can be customized based on department, location, role, or employment type. Conditional assignment ensures that employees receive relevant tasks and documentation.
+
+---
+
+section_id: ONBOARD_Q4_ESIGN
+section: Onboarding & Offboarding
+product_area: Employee Lifecycle
+intent_tags: ["e_signature", "audit_trail"]
+last_updated: 2022-11-12
+content:
+All onboarding documents support embedded e-signatures with full audit trails. This allows compliance with local laws and internal policies for documentation verification.
+
+---
+
+section_id: TIMEOFF_Q1_PTO_POLICIES
+section: Time-off & Leave Management
+product_area: HR Operations
+intent_tags: ["pto_policies", "accrual", "carryover"]
+last_updated: 2025-09-11
+content:
+PTO policies support accrual rules, front-loading, carryover, and caps. Policies can be applied per group or location, and all version changes are tracked for audit history. Managers approve requests via web or mobile UI.
+
+---
+
+section_id: TIMEOFF_Q2_CONFLICTS
+section: Time-off & Leave Management
+product_area: HR Operations
+intent_tags: ["approvals", "conflict_management", "escalation"]
+last_updated: 2024-12-20
+content:
+Manager approval requests are overlaid with team calendars to prevent conflicts. The system can warn or block approvals during blackout periods and escalate exceptions to HR as needed.
+
+---
+
+section_id: TIMEOFF_Q3_CALENDAR_SYNC
+section: Time-off & Leave Management
+product_area: HR Operations
+intent_tags: ["calendar_sync", "integration"]
+last_updated: 2023-10-05
+content:
+External calendar integration allows PTO to sync with Google Calendar, Outlook 365, or ICS feeds, keeping team schedules consistent across platforms.
+
+---
+
+section_id: PAYROLL_Q1_PROVIDERS
+section: Payroll Integrations & Data
+product_area: Finance & Payroll
+intent_tags: ["payroll_integration", "providers", "data_flow"]
+last_updated: 2025-06-18
+content:
+HRCare provides native connectors for ADP, Gusto, QuickBooks Payroll, and Paychex. Other providers can be integrated via SFTP, CSV exports, or API. Mapping tools ensure fields are validated before exports to maintain accuracy.
+
+---
+
+section_id: PAYROLL_Q2_VALIDATION
+section: Payroll Integrations & Data
+product_area: Finance & Payroll
+intent_tags: ["export_validation", "mapping", "compliance"]
+last_updated: 2024-08-02
+content:
+Admins can use the mapping UI under Settings → Integrations to validate payroll exports. Reports highlight missing IDs, tax codes, or unmapped fields to correct errors before finalizing data.
+
+---
+
+section_id: PAYROLL_Q3_SYNC
+section: Payroll Integrations & Data
+product_area: Finance & Payroll
+intent_tags: ["sync_frequency", "real_time", "manual_sync"]
+last_updated: 2023-05-15
+content:
+Native payroll integrations sync daily by default, with options for manual sync at any time. Enterprise contracts can enable near real-time synchronization for mission-critical payroll processing.
+
+---
+
+section_id: PAYROLL_Q4_HISTORICAL_EXPORT
+section: Payroll Integrations & Data
+product_area: Finance & Payroll
+intent_tags: ["historical_data", "export", "audit"]
+last_updated: 2022-11-09
+content:
+Admins can export historical payroll data, including past pay periods, adjustments, and audit logs. This ensures compliance and enables financial analysis or audits.
+
+---
+
+section_id: PERFORMANCE_Q1_CYCLES
+section: Performance & Reviews
+product_area: HR Operations
+intent_tags: ["performance_reviews", "cycles", "templates"]
+last_updated: 2025-01-21
+content:
+Performance review cycles can be configured with templates (manager-only, self+manager, 360-degree). Set timelines, assign reviewers, send reminders, and export aggregated results for calibration and compensation planning.
+
+---
+
+section_id: PERFORMANCE_Q2_GOALS
+section: Performance & Reviews
+product_area: HR Operations
+intent_tags: ["goals", "OKRs", "tracking"]
+last_updated: 2024-11-06
+content:
+Employees and managers can create quarterly or annual goals, align them to departmental OKRs, and track progress using status updates and measurable metrics.
+
+---
+
+section_id: PERFORMANCE_Q3_FEEDBACK
+section: Performance & Reviews
+product_area: HR Operations
+intent_tags: ["continuous_feedback", "peer_recognition"]
+last_updated: 2023-07-30
+content:
+HRCare allows team members to give continuous feedback, recognition, and notes, which can optionally be included in performance review cycles to promote a culture of ongoing development.
+
+---
+
+section_id: COMPENSATION_Q1_MERIT
+section: Compensation Management
+product_area: HR Operations
+intent_tags: ["merit_cycles", "salary_review", "approvals"]
+last_updated: 2025-04-12
+content:
+Compensation teams can set merit pools, guidelines, and approval workflows. HRCare generates final outputs ready for payroll systems.
+
+---
+
+section_id: COMPENSATION_Q2_VARIABLE_PAY
+section: Compensation Management
+product_area: HR Operations
+intent_tags: ["bonuses", "variable_pay", "equity"]
+last_updated: 2024-10-21
+content:
+Templates support bonuses, commissions, one-time adjustments, and equity grant recommendations, streamlining variable pay administration.
+
+---
+
+section_id: COMPLIANCE_Q1_CERTIFICATIONS
+section: Compliance & Security
+product_area: Security & Compliance
+intent_tags: ["SOC2", "penetration_testing", "encryption"]
+last_updated: 2025-08-16
+content:
+HRCare maintains SOC 2 Type II controls, conducts regular penetration testing, encrypts data in transit (TLS) and at rest (AES-256), and maintains an incident response plan. Security summaries are available under NDA.
+
+---
+
+section_id: COMPLIANCE_Q2_DSR
+section: Compliance & Security
+product_area: Security & Compliance
+intent_tags: ["DSR", "GDPR", "CCPA", "data_subject_request"]
+last_updated: 2023-03-11
+content:
+Admins submit Data Subject Requests via Settings → Data. Certified exports and deletions comply with GDPR, CCPA, and other data privacy regulations. Retention schedules and hold policies are configurable per customer.
+
+---
+
+section_id: COMPLIANCE_Q3_AUDIT
+section: Compliance & Security
+product_area: Security & Compliance
+intent_tags: ["audit_logs", "admin_activity"]
+last_updated: 2024-12-01
+content:
+Every admin action, user update, and permission change is logged and exportable. This ensures accountability and compliance during audits.
+
+---
+
+section_id: COMPLIANCE_Q4_BACKGROUND
+section: Compliance & Security
+product_area: Security & Compliance
+intent_tags: ["background_checks", "integration"]
+last_updated: 2022-06-18
+content:
+Background checks are supported through integration partners. HR can order checks and track statuses within HRCare to ensure compliant hiring practices.
+
+---
+
+section_id: API_Q1_AVAILABILITY
+section: APIs & Developer Tools
+product_area: Integration & API
+intent_tags: ["API", "REST", "GraphQL", "webhooks"]
+last_updated: 2025-10-29
+content:
+HRCare provides REST and GraphQL APIs, API key management, OAuth2 support, and webhooks for events like new hires, status changes, and time-off requests. Documentation is available under Settings → Developer, including examples and schema.
+
+---
+
+section_id: API_Q2_SANDBOX
+section: APIs & Developer Tools
+product_area: Integration & API
+intent_tags: ["sandbox", "testing", "integration"]
+last_updated: 2024-02-14
+content:
+Admins can request sandbox environments to test API integrations, SSO configurations, and payroll mappings without affecting production data.
+
+---
+
+section_id: API_Q3_RATE_LIMITS
+section: APIs & Developer Tools
+product_area: Integration & API
+intent_tags: ["rate_limits", "throughput"]
+last_updated: 2023-11-25
+content:
+Rate limits are enforced for API usage. Standard plans have reasonable per-minute limits, while enterprise plans may request higher throughput to accommodate large-scale integrations.
+
+---
+
+section_id: INTEGRATIONS_Q1_SUPPORT
+section: Integrations & Automations
+product_area: Integration & API
+intent_tags: ["integrations", "automation", "workflow"]
+last_updated: 2025-04-29
+content:
+HRCare integrates seamlessly with communication and collaboration tools such as Slack, Microsoft Teams, Google Workspace, and Outlook. It also connects to job boards, payroll systems, and HR platforms for automated data exchange. Admins can configure triggers to automate workflows, such as task assignments, notifications, or data updates, based on events like new hires, status changes, or time-off requests. Integration logs track all actions, ensuring traceability and compliance with internal policies. Custom connectors and APIs allow advanced users to build tailored workflows that fit organizational processes. Integration dashboards provide real-time insights into data flow, task completion, and error monitoring. By centralizing integrations and automations, HRCare reduces manual intervention, minimizes errors, and improves efficiency across HR and payroll operations. This system ensures accurate, timely updates across platforms, streamlining HR operations while maintaining security and audit readiness.
+
+---
+
+section_id: INTEGRATIONS_Q2_WEBHOOK
+section: Integrations & Automations
+product_area: Integration & API
+intent_tags: ["webhook", "trigger", "automation"]
+last_updated: 2024-10-08
+content:
+External systems can send signed webhook events to HRCare to trigger automation workflows. Events can include employee onboarding, offboarding, status changes, payroll updates, or task assignments. Admins configure webhook endpoints and map events to corresponding actions within HRCare, such as creating tasks, sending notifications, or updating employee records. Security measures, including HMAC signatures and IP restrictions, protect against unauthorized requests. All webhook events are logged for auditing, error handling, and retries if failures occur. Integration dashboards allow admins to monitor webhook activity, identify bottlenecks, and optimize workflow performance. By leveraging webhook-driven automation, organizations can synchronize HRCare with third-party systems in real time, eliminate repetitive manual tasks, ensure data consistency, and enhance overall operational efficiency. This setup supports both small teams and enterprise-scale deployments with multiple connected systems.
+
+---
+
+section_id: INTEGRATIONS_Q3_ORG_CHART
+section: Integrations & Automations
+product_area: Integration & API
+intent_tags: ["org_chart", "sync", "identity"]
+last_updated: 2023-05-20
+content:
+HRCare supports organizational chart synchronization with external identity and collaboration systems to ensure hierarchical accuracy across platforms. Changes in employee roles, departments, or reporting lines can be automatically reflected in HRCare, keeping org charts up to date in real time. Integration supports both one-way and bidirectional sync, with conflict resolution and audit logging. Visual dashboards display reporting structures, team compositions, and managerial hierarchies, aiding HR planning, succession planning, and performance tracking. Admins can configure update intervals, mappings between fields, and notifications for changes. By keeping org charts accurate and automated, HRCare reduces manual maintenance, ensures data consistency, and improves organizational transparency. This functionality supports enterprise compliance, facilitates efficient communication, and enables better workforce management across multiple tools and locations.
+
+---
+
+section_id: REPORT_Q1_BUILTIN
+section: Reporting & Analytics
+product_area: Analytics & Reporting
+intent_tags: ["built-in_reports", "headcount", "turnover"]
+last_updated: 2025-07-09
+content:
+HRCare offers a wide range of built-in reports for HR and business operations, including headcount summaries, turnover analysis, time-off utilization, hiring funnel metrics, payroll reconciliation, and compliance reporting. Reports can be generated on-demand or scheduled for periodic delivery via email or dashboard notifications. Users can filter data by department, location, role, or employment type, providing granular insights for decision-making. Advanced reporting supports custom queries, scheduled exports, and BI connector integrations, enabling seamless use with enterprise reporting platforms. Each report includes visualization options, such as charts, tables, and heatmaps, to highlight trends and actionable insights. Data is timestamped, audit-ready, and exportable in multiple formats, including PDF and CSV. The system tracks historical data, allowing comparisons over time to inform strategic HR and business decisions. Built-in alerts notify admins of anomalies or threshold breaches. This ensures organizations have a complete, accurate, and compliant view of workforce and operational metrics.
+
+---
+
+section_id: REPORT_Q2_DASHBOARDS
+section: Reporting & Analytics
+product_area: Analytics & Reporting
+intent_tags: ["dashboards", "sharing", "PDF_export"]
+last_updated: 2024-06-05
+content:
+HRCare dashboards provide real-time visibility into HR metrics and operational KPIs. Users can customize dashboards to include relevant charts, tables, and widgets reflecting headcount, turnover, time-off usage, hiring progress, payroll summaries, or performance tracking. Dashboards support role-based access controls, ensuring managers see relevant data while maintaining confidentiality. Data can be exported as PDFs or CSV files for reporting, sharing, or presentation purposes. Alerts can be set up for critical thresholds, such as low PTO balances, high turnover, or missed approvals. Dashboards update automatically with incoming data from integrated systems and workflows, providing managers and executives with an accurate view of organizational health. Historical snapshots allow trend analysis and comparisons over time. By centralizing insights, HRCare dashboards reduce manual reporting, improve decision-making speed, and ensure data-driven management across departments.
+
+---
+
+section_id: REPORT_Q3_CUSTOM_FIELDS
+section: Reporting & Analytics
+product_area: Analytics & Reporting
+intent_tags: ["custom_fields", "reporting"]
+last_updated: 2023-09-17
+content:
+HRCare allows organizations to define custom fields for employees, jobs, workflows, or other HR objects, enabling reporting that reflects specific operational or compliance needs. Custom fields can be text, numeric, date, or dropdown types and can be applied globally or per location, department, or role. Reports and dashboards automatically incorporate these fields, allowing filtering, aggregation, and visualization alongside standard HR metrics. Historical data for custom fields is preserved for audit and trend analysis. Admins can schedule reports including custom fields for periodic review or export to external systems. By supporting custom fields, HRCare ensures reporting flexibility and enables organizations to capture unique workforce characteristics, track specific KPIs, and comply with industry-specific reporting standards. This enhances decision-making, monitoring, and operational planning across the HR lifecycle.
+
+---
+
+section_id: SUPPORT_Q1_SSO_ISSUES
+section: Troubleshooting & Support
+product_area: Customer Support
+intent_tags: ["SSO_troubleshoot", "IdP", "backup_admin"]
+last_updated: 2025-11-10
+content:
+If SSO users cannot log in after IdP changes, verify metadata, certificate validity, attribute mappings, time synchronization, and assertion logs. Enable backup admin access and contact support with logs for troubleshooting.
+
+---
+
+section_id: SUPPORT_Q2_HELP
+section: Troubleshooting & Support
+product_area: Customer Support
+intent_tags: ["support", "TAM", "chat", "email"]
+last_updated: 2024-01-15
+content:
+Customers can get help via in-app chat, support portal, or email support@hrcare.example. Enterprise customers have dedicated TAMs and phone escalation paths. Including logs and screenshots speeds up triage.
+
+---
+
+section_id: SUPPORT_Q3_AVAILABILITY
+section: Troubleshooting & Support
+product_area: Customer Support
+intent_tags: ["support_hours", "24/7"]
+last_updated: 2023-02-08
+content:
+Enterprise customers receive 24/7 support. Standard plans receive business-hour support. Critical incidents are prioritized according to plan and SLA agreements.
