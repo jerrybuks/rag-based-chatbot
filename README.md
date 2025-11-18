@@ -4,7 +4,7 @@ A RAG-based chatbot service built with FastAPI.
 
 ## Live Demo & Monitoring
 
-- **Product Demo**: [https://rag-chatbot-fe-self.vercel.app/](https://rag-chatbot-fe-self.vercel.app/)
+- **Product Demo**: [https://rag-chatbot-fe-self.vercel.app/](https://rag-chatbot-fe-self.vercel.app)
 
 - **API Documentation**: [https://rag-based-chatbot-96uz.onrender.com/docs](https://rag-based-chatbot-96uz.onrender.com/docs)
 - **Status Page**: [https://stats.uptimerobot.com/5z2EBCHShQ](https://stats.uptimerobot.com/5z2EBCHShQ)
