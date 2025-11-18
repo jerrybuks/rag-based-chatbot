@@ -27,7 +27,7 @@ def retrieve_context(
     k: int = 3,
     filters: Optional[Dict[str, Any]] = None,
     openai_api_key: Optional[str] = None,
-    min_similarity: float = 0.75,
+    min_similarity: float = 0.78,
 ) -> tuple[List[Tuple[Document, float]], Dict[str, Any]]:
     """
     Retrieve relevant context using vector search with optional metadata filters.
@@ -49,7 +49,7 @@ def retrieve_context(
         k: Number of top results to retrieve (default: 3)
         filters: Optional metadata filters (e.g., {"section": "Account & Access"})
         openai_api_key: OpenAI API key (defaults to OPENAI_API_KEY env var)
-        min_similarity: Minimum similarity threshold (0.0 to 1.0, default: 0.75)
+        min_similarity: Minimum similarity threshold (0.0 to 1.0, default: 0.78)
                        Results below this threshold will be filtered out
         
     Returns:
