@@ -71,6 +71,9 @@ async def query_question(request: Request, question_request: QuestionRequest) ->
     tokens_prompt = 0
     tokens_completion = 0
     total_tokens = 0
+    embedding_cost_usd = 0.0
+    embedding_tokens = 0
+    llm_cost_usd = 0.0
     model_name = DEFAULT_LLM_MODEL
     cached_response = None
     query_id = None
@@ -98,8 +101,6 @@ async def query_question(request: Request, question_request: QuestionRequest) ->
         
         # Step 1: Validation is handled by Pydantic model
         # Step 2 & 3: Retrieve relevant context (embeddings + vector search with scores)
-        embedding_cost_usd = 0.0
-        embedding_tokens = 0
         try:
             context_documents_with_scores, embedding_metadata = retrieve_context(
                 question=question_request.question,
