@@ -241,10 +241,12 @@ I track and report:
 - `totalEmbeddingCost` (cost for generating embeddings)
 - `totalLlmCost` (cost for LLM generation)
 - `totalCost` (total cost per query)
+- `totalTokens` (includes both LLM tokens and embedding tokens)
+- `totalEmbeddingTokens` (tokens used for embedding generation)
 - Cumulative cost over all requests
 - Per-request cost breakdown in `recent` requests
 
-Costs are calculated from actual API usage (token counts) using current OpenAI pricing.
+Costs are calculated from actual API usage (token counts) using current OpenAI pricing. Total tokens represent the complete token usage across both embedding generation and LLM calls.
 
 ### 📈 Reliability
 
