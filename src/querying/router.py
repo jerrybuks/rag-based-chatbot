@@ -6,7 +6,10 @@ import logging
 from pathlib import Path
 
 from dotenv import load_dotenv
-from fastapi import APIRouter, HTTPException, status
+from fastapi import APIRouter, HTTPException, status, Request
+from slowapi import Limiter
+from slowapi.util import get_remote_address
+from typing import Optional
 
 from .models import QuestionRequest, QuestionResponse
 from .retrieval import retrieve_context
@@ -27,12 +30,24 @@ logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/api/v1/query", tags=["query"])
 
+# Rate limiter (will be set by main.py)
+limiter: Optional[Limiter] = None  # Will be initialized in main.py
+
 # Default vectorstore path
 DEFAULT_VECTORSTORE_PATH = Path("./chroma_db")
 
 
+def rate_limit_decorator(limit_str: str):
+    """Helper to apply rate limiting if limiter is available."""
+    def decorator(func):
+        if limiter:
+            return limiter.limit(limit_str)(func)
+        return func
+    return decorator
+
 @router.post("/", response_model=QuestionResponse)
-async def query_question(request: QuestionRequest) -> QuestionResponse:
+@rate_limit_decorator("60/minute")  # 60 requests per minute (1 per second)
+async def query_question(request: Request, question_request: QuestionRequest) -> QuestionResponse:
     """
     Query endpoint that accepts a question and returns an answer.
     
@@ -44,7 +59,8 @@ async def query_question(request: QuestionRequest) -> QuestionResponse:
     5. Returns answer with sources
     
     Args:
-        request: QuestionRequest with question and optional filters
+        request: FastAPI Request object (for rate limiting)
+        question_request: QuestionRequest with question and optional filters
         
     Returns:
         QuestionResponse with answer, context, and sources
@@ -61,10 +77,10 @@ async def query_question(request: QuestionRequest) -> QuestionResponse:
     
     try:
         # Generate query ID (hash) for this question
-        query_id = _get_question_hash(request.question)
+        query_id = _get_question_hash(question_request.question)
         
         # Check cache first
-        cached_response = get_cached_response(request.question)
+        cached_response = get_cached_response(question_request.question)
         if cached_response:
             logger.info("Returning cached response")
             # Reorder cached response to have query_id first
@@ -85,12 +101,12 @@ async def query_question(request: QuestionRequest) -> QuestionResponse:
         embedding_cost_usd = 0.0
         try:
             context_documents_with_scores, embedding_metadata = retrieve_context(
-                question=request.question,
+                question=question_request.question,
                 vectorstore_path=DEFAULT_VECTORSTORE_PATH,
                 k=3,  # Top 3 results
-                filters=request.filters,
+                filters=question_request.filters,
                 openai_api_key=openai_api_key,
-                min_similarity=request.min_similarity,  # Filter by similarity threshold
+                min_similarity=question_request.min_similarity,  # Filter by similarity threshold
             )
             
             # Extract embedding cost
@@ -102,7 +118,7 @@ async def query_question(request: QuestionRequest) -> QuestionResponse:
         # Step 4: Generate answer using LLM (if context found)
         try:
             result = generate_answer(
-                question=request.question,
+                question=question_request.question,
                 context_documents_with_scores=context_documents_with_scores,
                 openai_api_key=openai_api_key,
             )
@@ -126,7 +142,7 @@ async def query_question(request: QuestionRequest) -> QuestionResponse:
             success = True
             
             # Save to cache
-            save_to_cache(request.question, result_clean)
+            save_to_cache(question_request.question, result_clean)
             
         except OpenAIAPIError as e:
             error_message = str(e)
@@ -151,11 +167,11 @@ async def query_question(request: QuestionRequest) -> QuestionResponse:
             total_cost_usd = embedding_cost_usd + llm_cost_usd
             
             # Create question snippet (first 100 chars)
-            question_snippet = request.question[:100] if len(request.question) > 100 else request.question
+            question_snippet = question_request.question[:100] if len(question_request.question) > 100 else question_request.question
             
             # Ensure query_id is set
             if query_id is None:
-                query_id = _get_question_hash(request.question)
+                query_id = _get_question_hash(question_request.question)
             
             record_request(
                 latency_ms=latency_ms,
@@ -173,7 +189,8 @@ async def query_question(request: QuestionRequest) -> QuestionResponse:
 
 
 @router.get("/metrics")
-async def get_metrics_endpoint():
+@rate_limit_decorator("30/minute")  # 30 requests per minute
+async def get_metrics_endpoint(request: Request):
     """
     Get metrics for query requests.
     
@@ -184,7 +201,8 @@ async def get_metrics_endpoint():
 
 
 @router.get("/evaluate/{query_id}", response_model=EvaluationResponse)
-async def evaluate_query(query_id: str) -> EvaluationResponse:
+@rate_limit_decorator("30/minute")  # 30 requests per minute
+async def evaluate_query(request: Request, query_id: str) -> EvaluationResponse:
     """
     Evaluate a query response for hallucination and quality.
     

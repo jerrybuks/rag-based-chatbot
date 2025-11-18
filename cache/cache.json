@@ -49,5 +49,45 @@
       "no_context_found": true
     },
     "cached_at": "2025-11-17T15:27:23.301420Z"
+  },
+  "2f157f7e47053588df8a688b800c8dabede1856a09516cc7981825c872326e59": {
+    "question": "How do I handle onboarding?",
+    "response": {
+      "query_id": "2f157f7e47053588df8a688b800c8dabede1856a09516cc7981825c872326e59",
+      "answer": "To handle onboarding effectively, you can use HRCare onboarding templates to automate paperwork, IT requests, benefits enrollment, and orientation tasks. These templates allow managers and IT teams to track completion through checklists and automated reminders, ensuring compliance and a smooth onboarding process. Additionally, you can customize onboarding templates based on department, location, role, or employment type, ensuring that employees receive relevant tasks and documentation.",
+      "context_used": [
+        {
+          "content": "HRCare onboarding templates automate paperwork, IT requests, benefits enrollment, and orientation tasks. Managers and IT teams can track completion via checklists and automated reminders, ensuring compliance and smooth onboarding.",
+          "section_id": "ONBOARD_Q1_AUTOMATION",
+          "section": "Onboarding & Offboarding",
+          "product_area": "Employee Lifecycle",
+          "chunk_id": "ONBOARD_Q1_AUTOMATION_chunk_1",
+          "similarity_score": 0.8334149122238159
+        },
+        {
+          "content": "Onboarding templates can be customized based on department, location, role, or employment type. Conditional assignment ensures that employees receive relevant tasks and documentation.",
+          "section_id": "ONBOARD_Q3_CUSTOMIZATION",
+          "section": "Onboarding & Offboarding",
+          "product_area": "Employee Lifecycle",
+          "chunk_id": "ONBOARD_Q3_CUSTOMIZATION_chunk_1",
+          "similarity_score": 0.8299522399902344
+        },
+        {
+          "content": ". Automated reminders notify users of pending invitations, reducing delays. Bulk invitation options, including CSV imports, simplify onboarding for larger teams. Every invitation action is logged to ensure auditability and compliance with organizational policies. This process ensures that employees receive the correct access, onboarding is efficient, and security standards are consistently applied. Admins can also revoke or reassign invitations if necessary, maintaining control over organizational access.",
+          "section_id": "ACCOUNT_Q2_INVITE",
+          "section": "Account & Access",
+          "product_area": "Account Management",
+          "chunk_id": "ACCOUNT_Q2_INVITE_chunk_2",
+          "similarity_score": 0.8289051055908203
+        }
+      ],
+      "sources": [
+        "ONBOARD_Q1_AUTOMATION_chunk_1",
+        "ONBOARD_Q3_CUSTOMIZATION_chunk_1",
+        "ACCOUNT_Q2_INVITE_chunk_2"
+      ],
+      "no_context_found": false
+    },
+    "cached_at": "2025-11-18T08:30:35.804843Z"
   }
 }

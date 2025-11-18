@@ -15,7 +15,8 @@ dependencies = [
     "langchain-community==0.3.31",
     "langchain-openai==0.3.35",
     "python-dotenv==1.0.0",
-    "tiktoken>=0.5.0"
+    "tiktoken>=0.5.0",
+    "slowapi>=0.1.9"
 ]
 
 [project.optional-dependencies]
