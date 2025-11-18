@@ -55,6 +55,7 @@ def record_request(
     total_tokens: int,
     tokens_prompt: int,
     tokens_completion: int,
+    embedding_tokens: int,
     embedding_cost_usd: float,
     llm_cost_usd: float,
     total_cost_usd: float,
@@ -68,9 +69,10 @@ def record_request(
     
     Args:
         latency_ms: Request latency in milliseconds
-        total_tokens: Total tokens used (LLM only)
+        total_tokens: Total tokens used (LLM tokens + embedding tokens)
         tokens_prompt: Prompt tokens (LLM)
         tokens_completion: Completion tokens (LLM)
+        embedding_tokens: Tokens used for embedding generation
         embedding_cost_usd: Cost for embedding generation in USD
         llm_cost_usd: Cost for LLM call in USD
         total_cost_usd: Total cost (embedding + LLM) in USD
@@ -87,6 +89,7 @@ def record_request(
         "total_tokens": total_tokens,
         "tokens_prompt": tokens_prompt,
         "tokens_completion": tokens_completion,
+        "embedding_tokens": embedding_tokens,
         "costUsd": total_cost_usd,
         "embeddingCostUsd": embedding_cost_usd,
         "llmCostUsd": llm_cost_usd,
@@ -165,6 +168,7 @@ def get_metrics() -> Dict[str, Any]:
     total_tokens = sum(tokens) if tokens else 0
     total_prompt = sum(r.get("tokens_prompt", 0) for r in requests)
     total_completion = sum(r.get("tokens_completion", 0) for r in requests)
+    total_embedding_tokens = sum(r.get("embedding_tokens", 0) for r in requests)
     
     # Calculate costs (separate and total)
     total_cost = sum(costs) if costs else 0.0
@@ -210,6 +214,7 @@ def get_metrics() -> Dict[str, Any]:
         "totalTokens": total_tokens,
         "totalPrompt": total_prompt,
         "totalCompletion": total_completion,
+        "totalEmbeddingTokens": total_embedding_tokens,
         "totalCost": total_cost,
         "totalEmbeddingCost": total_embedding_cost,
         "totalLlmCost": total_llm_cost,

@@ -99,6 +99,7 @@ async def query_question(request: Request, question_request: QuestionRequest) ->
         # Step 1: Validation is handled by Pydantic model
         # Step 2 & 3: Retrieve relevant context (embeddings + vector search with scores)
         embedding_cost_usd = 0.0
+        embedding_tokens = 0
         try:
             context_documents_with_scores, embedding_metadata = retrieve_context(
                 question=question_request.question,
@@ -109,8 +110,9 @@ async def query_question(request: Request, question_request: QuestionRequest) ->
                 min_similarity=question_request.min_similarity,  # Filter by similarity threshold
             )
             
-            # Extract embedding cost
+            # Extract embedding cost and tokens
             embedding_cost_usd = embedding_metadata.get("cost_usd", 0.0)
+            embedding_tokens = embedding_metadata.get("tokens", 0)
         except (EmbeddingError, RetrievalError) as e:
             error_message = str(e)
             raise handle_query_error(e)
@@ -126,7 +128,9 @@ async def query_question(request: Request, question_request: QuestionRequest) ->
             # Extract token usage and costs from result
             tokens_prompt = result.get("tokens_prompt", 0)
             tokens_completion = result.get("tokens_completion", 0)
-            total_tokens = result.get("total_tokens", 0)
+            llm_total_tokens = result.get("total_tokens", 0)
+            # Total tokens includes both LLM tokens and embedding tokens
+            total_tokens = llm_total_tokens + embedding_tokens
             llm_cost_usd = result.get("llm_cost_usd", 0.0)
             
             # Remove internal fields from result before returning
@@ -178,6 +182,7 @@ async def query_question(request: Request, question_request: QuestionRequest) ->
                 total_tokens=total_tokens,
                 tokens_prompt=tokens_prompt,
                 tokens_completion=tokens_completion,
+                embedding_tokens=embedding_tokens,
                 embedding_cost_usd=embedding_cost_usd,
                 llm_cost_usd=llm_cost_usd,
                 total_cost_usd=total_cost_usd,

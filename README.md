@@ -4,11 +4,11 @@ A RAG-based chatbot service built with FastAPI.
 
 ## Live Demo & Monitoring
 
-- **Product Demo**: [https://rag-chatbot-fe-self.vercel.app/](https://rag-chatbot-fe-self.vercel.app/s)
+- **Product Demo**: [https://rag-chatbot-fe-self.vercel.app/](https://rag-chatbot-fe-self.vercel.app/)
 
 - **API Documentation**: [https://rag-based-chatbot-96uz.onrender.com/docs](https://rag-based-chatbot-96uz.onrender.com/docs)
 - **Status Page**: [https://stats.uptimerobot.com/5z2EBCHShQ](https://stats.uptimerobot.com/5z2EBCHShQ)
-- **Metrics UI**: [https://rag-based-chatbot-96uz.onrender.com/api/v1/query/metrics](https://rag-based-chatbot-96uz.onrender.com/api/v1/query/metrics)
+- **Metrics**: [https://rag-based-chatbot-96uz.onrender.com/api/v1/query/metrics](https://rag-based-chatbot-96uz.onrender.com/api/v1/query/metrics)
 - **Report**: [https://github.com/jerrybuks/rag-based-chatbot/blob/main/reports/REPORT.MD](https://github.com/jerrybuks/rag-based-chatbot/blob/main/reports/REPORT.MD)
 
 > **Note**: This service is deployed on Render's free tier. The server may be unavailable sometimes due to the free tier limitations. Please check the status page for real-time availability information. If render server is alseep, please give like it 2 minutes and reload 
