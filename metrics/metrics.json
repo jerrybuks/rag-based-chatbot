@@ -27,8 +27,22 @@
       "error": null,
       "questionSnippet": "How do I build my own product that looks like yours?",
       "queryId": "811fe280aa0068a0eee866a8fb16baa84ba1b8418c6f0160c0c4db21ea558867"
+    },
+    {
+      "timestamp": "2025-11-18T08:30:35.811668Z",
+      "latencyMs": 17129.372119903564,
+      "total_tokens": 442,
+      "tokens_prompt": 358,
+      "tokens_completion": 84,
+      "costUsd": 0.0003057,
+      "embeddingCostUsd": 7.000000000000001e-07,
+      "llmCostUsd": 0.000305,
+      "success": true,
+      "error": null,
+      "questionSnippet": "How do I handle onboarding?",
+      "queryId": "2f157f7e47053588df8a688b800c8dabede1856a09516cc7981825c872326e59"
     }
   ],
-  "successes": 2,
+  "successes": 3,
   "failures": 0
 }
