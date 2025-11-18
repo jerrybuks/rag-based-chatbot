@@ -1,0 +1,36 @@
+{
+  "requests": [
+    {
+      "timestamp": "2025-11-18T13:06:36.221562Z",
+      "latencyMs": 4579.005241394043,
+      "total_tokens": 5,
+      "tokens_prompt": 0,
+      "tokens_completion": 0,
+      "embedding_tokens": 5,
+      "costUsd": 5.000000000000001e-07,
+      "embeddingCostUsd": 5.000000000000001e-07,
+      "llmCostUsd": 0.0,
+      "success": true,
+      "error": null,
+      "questionSnippet": "How do I cook?",
+      "queryId": "1dc6aa2ad37ed74ded13e3ae4fb27807bcd7ede6dc2a349666d19fa1ab7a1cbf"
+    },
+    {
+      "timestamp": "2025-11-18T13:06:51.916223Z",
+      "latencyMs": 3932.218074798584,
+      "total_tokens": 577,
+      "tokens_prompt": 494,
+      "tokens_completion": 76,
+      "embedding_tokens": 7,
+      "costUsd": 0.0003617,
+      "embeddingCostUsd": 7.000000000000001e-07,
+      "llmCostUsd": 0.000361,
+      "success": true,
+      "error": null,
+      "questionSnippet": "How do I create an account?",
+      "queryId": "e0a676072ad63194ba1110210357175e3c0e89256d255b368caee64d89f9cd71"
+    }
+  ],
+  "successes": 2,
+  "failures": 0
+}
