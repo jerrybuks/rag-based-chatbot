@@ -82,7 +82,7 @@ IMPORTANT: You must respond in the following JSON format:
 Where:
 - "verdict": 
   - "RELIABLE": Answer is reliable and well-supported by context
-  - "SUSPECTED_HALLUCINATION": Answer has high degree of response not in context and confidence is below 0.75
+  - "SUSPECTED_HALLUCINATION": Answer has high degree of response not in context and confidence is below 0.8
 - "confidence": Your confidence in the evaluation (0.0 = not confident, 1.0 = very confident)
 - "reasoning": Brief explanation of your evaluation
 
@@ -170,12 +170,12 @@ Please evaluate this answer and provide your assessment in the JSON format speci
         # Validate verdict
         if verdict not in ["RELIABLE", "SUSPECTED_HALLUCINATION"]:
             # Default based on confidence if invalid verdict
-            verdict = "SUSPECTED_HALLUCINATION" if confidence < 0.75 else "RELIABLE"
+            verdict = "SUSPECTED_HALLUCINATION" if confidence < 0.8 else "RELIABLE"
             logger.warning(f"Invalid verdict received: {evaluation_json.get('verdict')}, defaulting to {verdict}")
         
         # Set possible_hallucination based on confidence threshold
-        # Only true if confidence is below 0.75
-        possible_hallucination = confidence < 0.75
+        # Only true if confidence is below 0.8
+        possible_hallucination = confidence < 0.8
         
         # Extract token usage from response
         tokens_prompt = 0

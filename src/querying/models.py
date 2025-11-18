@@ -62,10 +62,10 @@ class QuestionRequest(BaseModel):
         ),
     )
     min_similarity: float = Field(
-        default=0.75,
+        default=0.8,
         ge=0.0,
         le=1.0,
-        description="Minimum similarity threshold (0.0 to 1.0). Results below this will be filtered out. Default: 0.75",
+        description="Minimum similarity threshold (0.0 to 1.0). Results below this will be filtered out. Default: 0.8",
     )
     
     @field_validator("question")
@@ -87,7 +87,7 @@ class QuestionRequest(BaseModel):
                     "section": "Account & Access",
                     "product_area": "Account Management"
                 },
-                "min_similarity": 0.75
+                "min_similarity": 0.8
             },
             "properties": {
                 "filters": {

@@ -160,7 +160,7 @@ Using HNSW provides:
 
 ### 🔹 1. Score Thresholding
 
-I implemented a configurable cosine similarity threshold (default: 0.75).
+I implemented a configurable cosine similarity threshold (default: 0.8).
 Chunks with similarity below this threshold are discarded.
 
 This prevents irrelevant context from being sent to the LLM, thereby wasting tokens.
@@ -320,7 +320,7 @@ POST /api/v1/query/
     "section": "Account & Access",
     "product_area": "Account Management"
   },
-  "min_similarity": 0.75
+  "min_similarity": 0.8
 }
 ```
 
@@ -362,7 +362,7 @@ I implemented an evaluation agent at `/api/v1/query/evaluate/{query_id}`:
 - Returns:
   - `verdict`: `RELIABLE` or `SUSPECTED_HALLUCINATION`
   - `confidence`: 0.0 to 1.0
-  - `possible_hallucination`: `true` if confidence < 0.75
+  - `possible_hallucination`: `true` if confidence < 0.8
   - `reasoning`: Brief explanation of the evaluation
 
 This provides programmatic quality assessment of generated answers.
