@@ -2,6 +2,29 @@
 
 By Jerry Chibuokem
 
+## ✅ TL;DR
+
+In this project, I built a production-grade RAG FAQ chatbot that:
+
+- ✅ parses a document with structured metadata
+- ✅ uses smart recursive, section-based chunking
+- ✅ generates embeddings with OpenAI
+- ✅ uses ChromaDB + cosine similarity + ANN
+- ✅ performs hybrid retrieval (vector + metadata filtering)
+- ✅ returns structured JSON via FastAPI REST API
+- ✅ tracks latency, cost, and reliability metrics
+- ✅ includes query caching + comprehensive error handling
+- ✅ provides a clean indexing & query pipeline
+- ✅ includes an evaluator agent for answer quality assessment
+
+This approach strikes the best balance between:
+
+- ✔ accuracy
+- ✔ cost efficiency
+- ✔ performance
+- ✔ clean architecture
+- ✔ observability
+
 ## 1. Context & Objective
 
 This project was built for **HRCare** — an HR SaaS that helps organizations manage hiring, onboarding, payroll integrations, time-off, performance, compliance, and employee lifecycle workflows.
@@ -35,7 +58,7 @@ I used OpenAI's embedding models (default: `text-embedding-ada-002`, with suppor
 
 ## 3. Document Processing & Chunking Strategy
 
-### 🔹 Recursive (Section-Based Chunking) (My Main Design Choice)
+### 🔹 Recursive (Section-Based) Chunking 
 
 My FAQ document is naturally structured into sections such as:
 
@@ -57,14 +80,14 @@ These sections are already semantically meaningful, so instead of chunking the r
 }
 ```
 
-Then I applied chunking inside each section only.
+Then I applied chunking inside each **section only**.
 
 ### 🔹 Why This Makes Sense
 
 - Sections are semantically coherent
 - I avoid mixing unrelated topics
 - Retrieval becomes more accurate
-- No unnecessary duplication from sliding windows
+- No unnecessary duplication across sections from sliding windows
 - No random fragmentation from fixed-size chunking
 
 ### 🔹 RecursiveCharacterTextSplitter
@@ -107,12 +130,14 @@ I configured Chroma's HNSW index to use cosine:
 collection_metadata={"hnsw:space": "cosine"}
 ```
 
-**Why choose Cosine over Euclidean?**
+**Why choose Cosine over Euclidean (Chroma's default)?**
 
 | Metric | Weakness | Why I Rejected It |
 |--------|----------|-------------------|
-| L2 (Euclidean) | Distance is scale-dependent | Embeddings vary in magnitude; irrelevant magnitude differences distort relevance |
-| Cosine | Purely measures directional similarity | More stable, cleaner ranking for text embeddings |
+| L2 (Euclidean) | Measures spatial distance | Measures straight-line distance between points, which doesn't align well with semantic similarity. For text embeddings, I wasn't interested in the magnitude of vectors, I wanted directional similarity (angle). |
+| Cosine | Magnitude-invariant | Focuses on the angle/direction between vectors, which better captures semantic similarity for text embeddings. |
+
+**Note:** Cosine similarity measures directional alignment (angle), not spatial distance, making it more appropriate for semantic similarity in text embeddings.
 
 ### 🔹 Cosine Distance → Similarity
 
@@ -138,7 +163,7 @@ Using HNSW provides:
 I implemented a configurable cosine similarity threshold (default: 0.75).
 Chunks with similarity below this threshold are discarded.
 
-This prevents hallucination when nothing relevant exists.
+This prevents irrelevant context from being sent to the LLM, thereby wasting tokens.
 
 ### 🔹 2. Hybrid Search
 
@@ -208,6 +233,7 @@ Tracked via `/api/v1/query/metrics` endpoint:
 - `p50Latency` (median response time)
 - `p95Latency` (95th percentile)
 - `throughput` (requests per second)
+- `errors & successes`
 
 ### 💰 Cost Tracking
 
@@ -247,7 +273,9 @@ I implemented:
 ### 1. Install dependencies
 
 ```bash
-pip install -r pyproject.toml
+python3 -m venv venv
+source venv/bin/activate
+pip install .
 ```
 
 ### 2. Set your environment variables
@@ -276,6 +304,10 @@ This will:
 ```bash
 fastapi dev src/main.py
 ```
+
+The server will be available at `http://localhost:8000`
+
+- **API Docs**: http://localhost:8000/docs
 
 ### 5. Query the API
 
@@ -334,27 +366,4 @@ I implemented an evaluation agent at `/api/v1/query/evaluate/{query_id}`:
   - `reasoning`: Brief explanation of the evaluation
 
 This provides programmatic quality assessment of generated answers.
-
-## ✅ Final Summary
-
-In this project, I built a production-grade RAG FAQ chatbot that:
-
-- ✅ parses a document with structured metadata
-- ✅ uses smart recursive, section-based chunking
-- ✅ generates embeddings with OpenAI
-- ✅ uses ChromaDB + cosine similarity + ANN
-- ✅ performs hybrid retrieval (vector + metadata filtering)
-- ✅ returns structured JSON via FastAPI REST API
-- ✅ tracks latency, cost, and reliability metrics
-- ✅ includes query caching + comprehensive error handling
-- ✅ provides a clean indexing & query pipeline
-- ✅ includes an evaluator agent for answer quality assessment
-
-This approach strikes the best balance between:
-
-- ✔ accuracy
-- ✔ cost efficiency
-- ✔ performance
-- ✔ clean architecture
-- ✔ observability
 
