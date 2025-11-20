@@ -1,0 +1,215 @@
+{
+  "e0a676072ad63194ba1110210357175e3c0e89256d255b368caee64d89f9cd71": {
+    "question": "How do I create an account?",
+    "response": {
+      "query_id": "e0a676072ad63194ba1110210357175e3c0e89256d255b368caee64d89f9cd71",
+      "answer": "To create an account in HRCare, visit the signup page and provide your organization’s legal name, billing contact, and relevant tax information. Designate an initial admin who will have full access to configure users, roles, integrations, and system-wide policies. Small teams can self-serve entirely online, while enterprise customers needing additional support should contact Sales for guided assistance.",
+      "context_used": [
+        {
+          "content": "To create an organization account in HRCare, visit the signup page and provide your organization’s legal name, billing contact, and relevant tax information. Designate an initial admin who will have full access to configure users, roles, integrations, and system-wide policies. Small teams can self-serve entirely online, completing all steps without assistance, while enterprise customers requiring SSO integration, sandbox testing, or migration of legacy data should contact Sales for guided support",
+          "section_id": "ACCOUNT_Q1_CREATE",
+          "section": "Account & Access",
+          "product_area": "Account Management",
+          "chunk_id": "ACCOUNT_Q1_CREATE_chunk_1",
+          "similarity_score": 0.814571738243103
+        },
+        {
+          "content": ". Once the account is created, the admin can set default permissions, add users, configure approval workflows, and enforce compliance rules such as password policies, IP restrictions, and session timeout rules. Automated confirmation emails and detailed step-by-step instructions guide new admins through account setup. HRCare ensures seamless onboarding, secure access, and alignment with organizational policies. Admins also receive notifications for account activities and system updates, helping maintain oversight and compliance",
+          "section_id": "ACCOUNT_Q1_CREATE",
+          "section": "Account & Access",
+          "product_area": "Account Management",
+          "chunk_id": "ACCOUNT_Q1_CREATE_chunk_2",
+          "similarity_score": 0.796240508556366
+        },
+        {
+          "content": "Admins can invite new users to HRCare by navigating to Settings → Users → Invite. Invitations require the recipient’s email and an assigned role. Role templates include Admin, HR Manager, Manager, Employee, or custom roles configured under Settings → Roles. Admins can define access limits for sensitive features, such as payroll, performance management, and reporting tools. Invited users complete their profile, set a secure password, and optionally enable multi-factor authentication (MFA) for additional protection. Automated reminders notify users of pending invitations, reducing delays",
+          "section_id": "ACCOUNT_Q2_INVITE",
+          "section": "Account & Access",
+          "product_area": "Account Management",
+          "chunk_id": "ACCOUNT_Q2_INVITE_chunk_1",
+          "similarity_score": 0.7847985625267029
+        }
+      ],
+      "sources": [
+        "ACCOUNT_Q1_CREATE_chunk_1",
+        "ACCOUNT_Q1_CREATE_chunk_2",
+        "ACCOUNT_Q2_INVITE_chunk_1"
+      ],
+      "no_context_found": false
+    },
+    "cached_at": "2025-11-20T10:06:38.347404Z"
+  },
+  "83aef2aac18a418b5312b20fb84a0badaa247ea69b2fd559021b51c3fa62643b": {
+    "question": "what features are available on your platform?",
+    "response": {
+      "query_id": "83aef2aac18a418b5312b20fb84a0badaa247ea69b2fd559021b51c3fa62643b",
+      "answer": "I don't have enough information in the provided context to answer this question.",
+      "context_used": [
+        {
+          "content": ". This system ensures accurate, timely updates across platforms, streamlining HR operations while maintaining security and audit readiness.",
+          "section_id": "INTEGRATIONS_Q1_SUPPORT",
+          "section": "Integrations & Automations",
+          "product_area": "Integration & API",
+          "chunk_id": "INTEGRATIONS_Q1_SUPPORT_chunk_3",
+          "similarity_score": 0.78592848777771
+        },
+        {
+          "content": ". Users benefit from uninterrupted productivity and consistent user experience when handling multiple organizational responsibilities.",
+          "section_id": "ACCOUNT_Q4_MULTI_ORG",
+          "section": "Account & Access",
+          "product_area": "Account Management",
+          "chunk_id": "ACCOUNT_Q4_MULTI_ORG_chunk_3",
+          "similarity_score": 0.7830599546432495
+        },
+        {
+          "content": "Enterprise customers receive 24/7 support. Standard plans receive business-hour support. Critical incidents are prioritized according to plan and SLA agreements.",
+          "section_id": "SUPPORT_Q3_AVAILABILITY",
+          "section": "Troubleshooting & Support",
+          "product_area": "Customer Support",
+          "chunk_id": "SUPPORT_Q3_AVAILABILITY_chunk_1",
+          "similarity_score": 0.7823934555053711
+        }
+      ],
+      "sources": [
+        "INTEGRATIONS_Q1_SUPPORT_chunk_3",
+        "ACCOUNT_Q4_MULTI_ORG_chunk_3",
+        "SUPPORT_Q3_AVAILABILITY_chunk_1"
+      ],
+      "no_context_found": false
+    },
+    "cached_at": "2025-11-20T10:07:41.496208Z"
+  },
+  "8243bf3ca9b8f06bed3d9c9f8e7c598d2b966b192b93b509bd944b1354510b4a": {
+    "question": "what can I do with your platform",
+    "response": {
+      "query_id": "8243bf3ca9b8f06bed3d9c9f8e7c598d2b966b192b93b509bd944b1354510b4a",
+      "answer": "I don't have enough information in the knowledge base to answer your question. Please try rephrasing your question or contact support for assistance.",
+      "context_used": [],
+      "sources": [],
+      "no_context_found": true
+    },
+    "cached_at": "2025-11-20T10:08:32.499494Z"
+  },
+  "05dc5b41841beb7197aa3f24ba66a84fddb003a61739edc62be9c653b7c0b17e": {
+    "question": "can I do hiring with your service?",
+    "response": {
+      "query_id": "05dc5b41841beb7197aa3f24ba66a84fddb003a61739edc62be9c653b7c0b17e",
+      "answer": "Yes, you can do hiring with the HRCare service. It offers a full suite of hiring tools, including job posting management, candidate pipelines, resume parsing, interview scheduling, configurable scorecards, offer workflows, and e-signature support. It also integrates with major job boards and social platforms to streamline candidate sourcing.",
+      "context_used": [
+        {
+          "content": "The HRCare ATS offers a full suite of hiring tools, including job posting management, candidate pipelines, resume parsing, interview scheduling, configurable scorecards, offer workflows with approval routing, and e-signature support. Integration with major job boards and social platforms streamlines candidate sourcing. Automated notifications, reminders, and task assignments reduce manual workload, while structured interviews and weighted competencies improve consistency and fairness in hiring decisions. All activities are time-stamped, logged, and exportable for compliance audits",
+          "section_id": "ATS_Q1_FEATURES",
+          "section": "Hiring & ATS",
+          "product_area": "Talent Acquisition",
+          "chunk_id": "ATS_Q1_FEATURES_chunk_1",
+          "similarity_score": 0.7932088375091553
+        },
+        {
+          "content": "Background checks are supported through integration partners. HR can order checks and track statuses within HRCare to ensure compliant hiring practices.",
+          "section_id": "COMPLIANCE_Q4_BACKGROUND",
+          "section": "Compliance & Security",
+          "product_area": "Security & Compliance",
+          "chunk_id": "COMPLIANCE_Q4_BACKGROUND_chunk_1",
+          "similarity_score": 0.7899446487426758
+        },
+        {
+          "content": "HRCare enables organizations to track candidates through configurable stages of the hiring pipeline using scorecards and status updates. Each candidate’s progress is logged and timestamped, providing a complete audit trail. Admins can export data for compliance reporting, analyzing time-to-hire, rejection reasons, and offer acceptance rates. Communication templates ensure consistent messaging for interview requests, rejections, and offers, while automated reminders keep candidates and hiring managers on schedule",
+          "section_id": "ATS_Q2_PROGRESS_TRACKING",
+          "section": "Hiring & ATS",
+          "product_area": "Talent Acquisition",
+          "chunk_id": "ATS_Q2_PROGRESS_TRACKING_chunk_1",
+          "similarity_score": 0.7895151376724243
+        }
+      ],
+      "sources": [
+        "ATS_Q1_FEATURES_chunk_1",
+        "COMPLIANCE_Q4_BACKGROUND_chunk_1",
+        "ATS_Q2_PROGRESS_TRACKING_chunk_1"
+      ],
+      "no_context_found": false
+    },
+    "cached_at": "2025-11-20T10:08:57.651768Z"
+  },
+  "2baa4aca847bcc14b63548369dbdeafaa8387372b54d71f0cd21531515f59ecc": {
+    "question": "which hr services are available?",
+    "response": {
+      "query_id": "2baa4aca847bcc14b63548369dbdeafaa8387372b54d71f0cd21531515f59ecc",
+      "answer": "HRCare offers a wide range of HR services, including built-in reports for HR and business operations, payroll reconciliation, compliance reporting, and support for background checks through integration partners. Additionally, it provides native connectors for ADP, Gusto, QuickBooks Payroll, and Paychex, with the ability to integrate other providers via SFTP, CSV exports, or API.",
+      "context_used": [
+        {
+          "content": "HRCare offers a wide range of built-in reports for HR and business operations, including headcount summaries, turnover analysis, time-off utilization, hiring funnel metrics, payroll reconciliation, and compliance reporting. Reports can be generated on-demand or scheduled for periodic delivery via email or dashboard notifications. Users can filter data by department, location, role, or employment type, providing granular insights for decision-making",
+          "section_id": "REPORT_Q1_BUILTIN",
+          "section": "Reporting & Analytics",
+          "product_area": "Analytics & Reporting",
+          "chunk_id": "REPORT_Q1_BUILTIN_chunk_1",
+          "similarity_score": 0.8478638529777527
+        },
+        {
+          "content": "HRCare provides native connectors for ADP, Gusto, QuickBooks Payroll, and Paychex. Other providers can be integrated via SFTP, CSV exports, or API. Mapping tools ensure fields are validated before exports to maintain accuracy.",
+          "section_id": "PAYROLL_Q1_PROVIDERS",
+          "section": "Payroll Integrations & Data",
+          "product_area": "Finance & Payroll",
+          "chunk_id": "PAYROLL_Q1_PROVIDERS_chunk_1",
+          "similarity_score": 0.8294733166694641
+        },
+        {
+          "content": "Background checks are supported through integration partners. HR can order checks and track statuses within HRCare to ensure compliant hiring practices.",
+          "section_id": "COMPLIANCE_Q4_BACKGROUND",
+          "section": "Compliance & Security",
+          "product_area": "Security & Compliance",
+          "chunk_id": "COMPLIANCE_Q4_BACKGROUND_chunk_1",
+          "similarity_score": 0.8293668627738953
+        }
+      ],
+      "sources": [
+        "REPORT_Q1_BUILTIN_chunk_1",
+        "PAYROLL_Q1_PROVIDERS_chunk_1",
+        "COMPLIANCE_Q4_BACKGROUND_chunk_1"
+      ],
+      "no_context_found": false
+    },
+    "cached_at": "2025-11-20T10:09:19.767146Z"
+  },
+  "ef99119f6228fd4db03adeaac3fd957e9106d1a3ea22828322ce9afc422a533a": {
+    "question": "can you software be deployed on premise?",
+    "response": {
+      "query_id": "ef99119f6228fd4db03adeaac3fd957e9106d1a3ea22828322ce9afc422a533a",
+      "answer": "I don't have enough information in the knowledge base to answer your question. Please try rephrasing your question or contact support for assistance.",
+      "context_used": [],
+      "sources": [],
+      "no_context_found": true
+    },
+    "cached_at": "2025-11-20T10:09:47.529023Z"
+  },
+  "012d84cd82b328216ba706f48e7888e7178a1d536d6107b5b77071918ff861df": {
+    "question": "Do you support ATS?",
+    "response": {
+      "query_id": "012d84cd82b328216ba706f48e7888e7178a1d536d6107b5b77071918ff861df",
+      "answer": "Yes, the HRCare ATS offers a full suite of hiring tools, including various features like job posting management, candidate pipelines, resume parsing, interview scheduling, configurable scorecards, offer workflows, and more (Source 1). It also provides features like candidate communication templates, consent tracking, dashboards for hiring progress, real-time analytics, and reporting on diversity metrics (Source 2).",
+      "context_used": [
+        {
+          "content": "The HRCare ATS offers a full suite of hiring tools, including job posting management, candidate pipelines, resume parsing, interview scheduling, configurable scorecards, offer workflows with approval routing, and e-signature support. Integration with major job boards and social platforms streamlines candidate sourcing. Automated notifications, reminders, and task assignments reduce manual workload, while structured interviews and weighted competencies improve consistency and fairness in hiring decisions. All activities are time-stamped, logged, and exportable for compliance audits",
+          "section_id": "ATS_Q1_FEATURES",
+          "section": "Hiring & ATS",
+          "product_area": "Talent Acquisition",
+          "chunk_id": "ATS_Q1_FEATURES_chunk_1",
+          "similarity_score": 0.8121909499168396
+        },
+        {
+          "content": ". All activities are time-stamped, logged, and exportable for compliance audits. Candidate communication templates and consent tracking support GDPR, CCPA, and other global data protection regulations. The ATS also provides dashboards for hiring progress, real-time analytics for pipeline health, and reporting on diversity metrics. Admins can set custom workflows for approval, rejection, or offer stages, ensuring alignment with organizational policies. The combination of automation, integration, and audit-ready tracking makes HRCare’s ATS efficient, compliant, and scalable.",
+          "section_id": "ATS_Q1_FEATURES",
+          "section": "Hiring & ATS",
+          "product_area": "Talent Acquisition",
+          "chunk_id": "ATS_Q1_FEATURES_chunk_2",
+          "similarity_score": 0.8071902394294739
+        }
+      ],
+      "sources": [
+        "ATS_Q1_FEATURES_chunk_1",
+        "ATS_Q1_FEATURES_chunk_2"
+      ],
+      "no_context_found": false
+    },
+    "cached_at": "2025-11-20T10:10:11.213955Z"
+  }
+}
