@@ -34,8 +34,8 @@ A RAG-based chatbot service built with FastAPI.
 ### 1. Create Virtual Environment
 
 ```bash
-python3 -m venv venv
-source venv/bin/activate
+python3 -m venv .venv
+source .venv/bin/activate
 ```
 
 ### 2. Install Dependencies
