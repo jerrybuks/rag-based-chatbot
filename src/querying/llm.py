@@ -1,4 +1,4 @@
-"""LLM integration for generating answers from context."""
+"""LLM integration for generating answers from context using LangChain LLMChain."""
 
 import os
 import logging
@@ -6,13 +6,14 @@ from typing import Any, Dict, List, Optional
 
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
-from langchain_core.messages import HumanMessage, SystemMessage
+from langchain.chains import LLMChain
 from langchain_core.documents import Document
 
 from .retrieval import format_context_for_llm
 from .exceptions import OpenAIAPIError
 from .pricing import calculate_llm_cost, DEFAULT_LLM_MODEL
 from .validations import validate_and_truncate_llm_prompt
+from .prompts import answer_prompt_template
 
 # Load environment variables
 load_dotenv()
